@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Hero</title>
+	<meta charset="utf-8"/>
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<!--<script type="text/javascript" src="./js/person1.js"></script>-->
+	<style type="text/css">
+		body{
+			background-color: #3b2414;
+		}
+		table {
+			position: absolute;
+			top: 100px;
+			right: 100px;
+			width: 150px;
+			height: 150px;
+		}
+		.table1{
+			position: absolute;
+			top: 400px;
+			right: 100px;
+			width: 150px;
+			height: 150px;
+		}
+		input {
+			width: 40px;
+			height: 30px;
+			background: orange;
+			color: white;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+		}
+		img {
+			position: absolute;
+			top: 300px;
+			left: 500px;
+		}
+		.img1{
+			position: absolute;
+			top: 300px;
+			left: 600px;
+		}
+		.div{
+			width: 800px;
+			height: 420px;
+			border-width: 5px;
+			border-color: #0a0a0a;
+			border-style: solid;
+			position: absolute;
+			margin-left: 268px;
+			margin-top: 101px;
+			background-image: url("./img/movebackgroud.gif");
+			background-size: 800px 430px;
+
+		}
+		.show{
+			box-shadow: inset 0px 0px 30px red;
+			border-radius: 50px;
+		}
+		.hide{
+			box-shadow:none;
+		}
+		.div1{
+		    margin-left: 10px;
+		    background-image: url("img/kj.png");
+		    background-size: 242px 300px;
+		    border-radius: 10%;
+			position: absolute;
+			margin-top: 166px;
+		}
+
+		#test1{
+			margin-left: 40px;
+			margin-top: 40px;
+			color: white;
+		}
+		#test2{
+			 margin-left:10px;
+			margin-top:40px ;
+			color: white;
+		}
+		.div2{
+			 margin-left: 68pc;
+			margin-top: 166px;
+			background-image: url("img/kj.png");
+			border-radius: 10%;
+			position: absolute;
+			background-size: 242px 300px;
+		}
+		.button2{
+			position: absolute;
+			margin-left: 91px;
+			margin-top: 65px;
+			width: 64px;
+		}
+		.button1{
+					position: absolute;
+					margin-left: 91px;
+					margin-top: 65px;
+					width: 64px;
+
+		}
+	</style>
+</head>
+<body>
+<div style="margin-top: 8pc;margin-left: 4pc;position: absolute;color: white">
+	 玩家一血值：<input type="text" id="testvalue" value="100" name="testvalue"/>
+</div>
+<div style="margin-top: 8pc;margin-left: 71pc;position: absolute;color: white">
+	 玩家二血值：<input type="text" id="testvalue1" value="100" name="testvalue1"/>
+</div >
+<div class="div">
+	<img id="im" src="images/down-0.png"/>
+	<img id="im1" src="images/down-0.png" class="img1"/>
+</div>
+<div style="color: white;position: absolute;margin-left: 22pc;margin-left: 22pc;margin-top: 33pc;">
+	<ul>
+		<li>this.up()         代表向上移动</li>
+		<li>this.down()       代表向下移动</li>
+		<li>this.left()       代表向左移动</li>
+		<li>this.right()      代表向右移动</li>
+		<li>this.attack()     代表向对方攻击</li>
+	</ul>
+</div>
+<div style="color: white;position: absolute;margin-left: 47pc;margin-top: 33pc;">
+	<ul>
+		<li>this.leftup()     代表向左上移动</li>
+		<li>this.leftdown()   代表向左下移动</li>
+		<li>this.rightup()    代表向右上移动</li>
+		<li>this.rightdown()  代表向右下移动</li>
+	</ul>
+</div>
+<table style="display: none">
+	<tr>
+		<td><input id="leftUp" type="button" value="左上" /></td>
+		<td><input id="goUp" type="button" value="向上" /></td>
+		<td><input id="rightUp" type="button" value="右上" /></td>
+	</tr>
+	<tr>
+		<td><input id="goLeft" type="button" value="左" /></td>
+		<td><input id="stop" type="button" value="停止" /></td>
+		<td><input id="goRight" type="button" value="右" /></td>
+	</tr>
+	<tr>
+		<td><input id="leftDown" type="button" value="左下" /></td>
+		<td><input id="goDown" type="button" value="向下" /></td>
+		<td><input id="rightDown" type="button" value="右下" /></td>
+	</tr>
+	<tr><td><input type="button" onclick="attack()" value="attack"></td></tr>
+</table>
+<table class="table1" style="display: none">
+	<tr>
+		<td><input id="leftUp1" type="button" value="左上" /></td>
+		<td><input id="goUp1" type="button" value="向上" /></td>
+		<td><input id="rightUp1" type="button" value="右上" /></td>
+	</tr>
+	<tr>
+		<td><input id="goLeft1" type="button" value="左" /></td>
+		<td><input id="stop1" type="button" value="停止" /></td>
+		<td><input id="goRight1" type="button" value="右" /></td>
+	</tr>
+	<tr>
+		<td><input id="leftDown1" type="button" value="左下" /></td>
+		<td><input id="goDown1" type="button" value="向下" /></td>
+		<td><input id="rightDown1" type="button" value="右下" /></td>
+	</tr>
+	<tr><td colspan="3"><input type="button" onclick="attack1()" value="attack"></td></tr>
+</table>
+<script type="text/javascript">
+	var i = 0, clc = null, flage;
+	var values=$("#sdasd").val();
+	var images = document.getElementById('im');
+
+	var oGoUp = document.getElementById('goUp');
+	var oGoDown = document.getElementById('goDown');
+	var oGoLeft = document.getElementById('goLeft');
+	var oGoRight = document.getElementById('goRight');
+	var oLeftUp = document.getElementById('leftUp');
+	var oLeftDown = document.getElementById('leftDown');
+	var oRightUp = document.getElementById('rightUp');
+	var oRightDown = document.getElementById('rightDown');
+	var oStop = document.getElementById('stop');
+
+	images.style.top = '300px';
+	images.style.left = '300px';
+	function hide(){
+		$("#im1").removeClass("show").addClass("hide");
+	}
+	function attack(){
+		var juli=Math.sqrt(Math.pow(Math.abs(parseInt(images.style.top)-parseInt(images1.style.top)),2)+Math.pow(Math.abs(parseInt(images.style.left)-parseInt(images1.style.left)),2));
+		if (parseInt(juli)<=100) {
+			$("#im1").removeClass("hide").addClass("show");
+			setTimeout("hide()", 500);
+			var a=parseInt($("#testvalue1").val())-10;
+			$("#testvalue1").val(a);
+			if(a<=0){
+				alert("游戏结束，玩家一获胜");
+				window.open("Maptwo.html");
+			}
+
+//			alert(parseInt($("#testvalue1").val())-1);
+
+		}
+		else {
+			alert("不再攻击范围内"+juli)
+		}
+	}
+	function hide1(){
+		$("#im").removeClass("show").addClass("hide");
+	}
+	function attack1(){
+		var juli=Math.sqrt(Math.pow(Math.abs(parseInt(images.style.top)-parseInt(images1.style.top)),2)+Math.pow(Math.abs(parseInt(images.style.left)-parseInt(images1.style.left)),2));
+		if (parseInt(juli)<=100) {
+			$("#im").removeClass("hide").addClass("show");
+			setTimeout("hide1()", 500);
+			var a=parseInt($("#testvalue").val())-10;
+			$("#testvalue").val(a);
+//			alert($("#testvalue").val());
+			if(a<=0){
+				alert("游戏结束，玩家二获胜");
+				window.open("Maptwo.html");
+			}
+		}
+		else {
+			alert("不再攻击范围内"+juli)
+		}
+	}
+
+	//停止
+	oStop.onclick = function(){
+		switch(flage){
+			case 1: images.src = 'images/up-0.png';break;
+			case 2: images.src = 'images/down-0.png';break;
+			case 3: images.src = 'images/left-0.png';break;
+			case 4: images.src = 'images/right-0.png';break;
+			case 5: images.src = 'images/rightUp-0.png';break;
+			case 6: images.src = 'images/rd-0.png';break;
+			case 7: images.src = 'images/ld-0.png';break;
+			case 8: images.src = 'images/lu-0.png';break;
+		}
+		clearInterval(clc);
+	}
+	//向上
+	oGoUp.onclick = function(){
+		i = 0;
+		clearInterval(clc);
+		clc = setInterval("goUp(i++);", 100);
+	}
+	function goUp(){
+		if (parseInt(images.style.top)>=0)
+		{
+			i = i % 4;
+			var name = "images/up-" + i + "." + "png";
+			images.src = name;
+			images.style.top = parseInt(images.style.top) - 10 + 'px';
+			flage = 1;
+			setTimeout("oStop.onclick(flage)", 1000);
+		}
+		else {
+			///	images.style.left = parseInt(images.style.left) + 5 + 'px';
+			images.style.top = parseInt(images.style.top) + 5 + 'px';
+
+		}
+	}
+	//向下
+	oGoDown.onclick = function(){
+		i = 0;
+		clearInterval(clc);
+		clc = setInterval("goDown(i++);", 100);
+	}
+	function goDown(){
+		if (parseInt(images.style.top)>=340)
+		{
+			images.style.top = parseInt(images.style.top) - 5 + 'px';
+		}
+		else {
+			i = i % 4;
+			var name = "images/down-" + i + "." + "png";
+			images.src = name;
+			images.style.top = parseInt(images.style.top) + 10 + 'px';
+			flage = 2;
+			setTimeout("oStop.onclick(flage)", 1000);
+		}
+
+	}
+	//向左
+	oGoLeft.onclick = function(){
+		i = 0;
+		clearInterval(clc);
+		clc = setInterval("goLeft(i++);", 100);
+	}
+	function goLeft(){
+		if (parseInt(images.style.left)<=0)
+		{
+			images.style.left = parseInt(images.style.left) + 5 + 'px';
+		}
+		else {
+			i = i % 4;
+			var name = "images/left-" + i + "." + "png";
+			images.src = name;
+			images.style.left = parseInt(images.style.left) - 10 + 'px';
+			flage = 3;
+			setTimeout("oStop.onclick(flage)", 1000);
+		}
+	}
+	//向右
+	oGoRight.onclick = function(){
+		i = 0;
+		clearInterval(clc);
+		clc = setInterval("goRight(i++);", 100);
+	}
+	function goRight(){
+		if (parseInt(images.style.left)>=740)
+		{
+			images.style.left = parseInt(images.style.left)-5 + 'px';
+		}
+		else {
+			i = i % 4;
+			var name = "images/right-" + i + "." + "png";
+			images.src = name;
+			images.style.left = parseInt(images.style.left) + 10 + 'px';
+			flage = 4;
+			setTimeout("oStop.onclick(flage)", 1000);
+		}
+	}
+	//向右上
+	oRightUp.onclick = function(){
+		i = 0;
+		clearInterval(clc);
+		clc = setInterval("goRightUp(i++);", 100);
+	}
+	function goRightUp(){
+		if (parseInt(images.style.top)<=0||parseInt(images.style.left)>=740)
+		{
+			images.style.left = parseInt(images.style.left)- 5 + 'px';
+			images.style.top = parseInt(images.style.top) + 5 + 'px';
+		}
+		else {
+			i = i % 4;
+			var name = "images/rightUp-" + i + "." + "png";
+			images.src = name;
+			images.style.left = parseInt(images.style.left) + 10 + 'px';
+			images.style.top = parseInt(images.style.top) - 10 + 'px';
+			flage = 5;
+			setTimeout("oStop.onclick(flage)", 1000);
+		}
+	}
+	//向右下
+	oRightDown.onclick = function(){
+		i = 0;
+		clearInterval(clc);
+		clc = setInterval("goRightDown(i++);", 100);
+	}
+	function goRightDown(){
+		if (parseInt(images.style.top)>=340||parseInt(images.style.left)>=740)
+		{
+			images.style.left = parseInt(images.style.left) - 5 + 'px';
+			images.style.top = parseInt(images.style.top) - 5 + 'px';
+		}
+		else {
+			i = i % 4;
+			var name = "images/rd-" + i + "." + "png";
+			images.src = name;
+			images.style.left = parseInt(images.style.left) + 10 + 'px';
+			images.style.top = parseInt(images.style.top) + 10 + 'px';
+			flage = 6;
+			setTimeout("oStop.onclick(flage)", 1000);
+		}
+	}
+	//向左下
+	oLeftDown.onclick = function(){
+		i = 0;
+		clearInterval(clc);
+		clc = setInterval("goLeftDown(i++);", 100);
+	}
+	function goLeftDown(){
+
+		if (parseInt(images.style.top)>=340||parseInt(images.style.left)<=0)
+		{
+			images.style.left = parseInt(images.style.left) + 5 + 'px';
+			images.style.top = parseInt(images.style.top) - 5 + 'px';
+		}
+		else {
+			i = i % 4;
+			var name = "images/ld-" + i + "." + "png";
+			images.src = name;
+			images.style.left = parseInt(images.style.left) - 10 + 'px';
+			images.style.top = parseInt(images.style.top) + 10 + 'px';
+			flage = 7;
+			setTimeout("oStop.onclick(flage)", 1000);
+		}
+	}
+	//向左上
+	oLeftUp.onclick =function(){
+		i = 0;
+		clearInterval(clc);
+		clc = setInterval("goLeftUp(i++);", 100);
+
+
+	}
+	function goLeftUp(){
+		if ((parseInt(images.style.top)<=0)||(parseInt(images.style.left)<=0))
+		{
+			images.style.left = parseInt(images.style.left) + 5 + 'px';
+			images.style.top = parseInt(images.style.top) + 5 + 'px';
+		}
+		else {
+			i = i % 4;
+			var name = "images/lu-" + i + "." + "png";
+			images.src = name;
+			images.style.left = parseInt(images.style.left) - 10 + 'px';
+			images.style.top = parseInt(images.style.top) - 10 + 'px';
+			flage = 8;
+			setTimeout("oStop.onclick(flage)", 400);
+		}
+	}
+
+
+
+
+	//分割线-----------
+
+
+	var i1 = 0, clc1 = null, flage1;
+	var images1 = document.getElementById('im1');
+	var oGoUp1 = document.getElementById('goUp1');
+	var oGoDown1 = document.getElementById('goDown1');
+	var oGoLeft1 = document.getElementById('goLeft1');
+	var oGoRight1 = document.getElementById('goRight1');
+	var oLeftUp1 = document.getElementById('leftUp1');
+	var oLeftDown1 = document.getElementById('leftDown1');
+	var oRightUp1 = document.getElementById('rightUp1');
+	var oRightDown1 = document.getElementById('rightDown1');
+	var oStop1 = document.getElementById('stop1');
+
+	images1.style.top = '300px';
+	images1.style.left = '400px';
+
+	//停止
+	oStop1.onclick = function(){
+		switch(flage1){
+			case 1: images1.src = 'images/up-0.png';break;
+			case 2: images1.src = 'images/down-0.png';break;
+			case 3: images1.src = 'images/left-0.png';break;
+			case 4: images1.src = 'images/right-0.png';break;
+			case 5: images1.src = 'images/rightUp-0.png';break;
+			case 6: images1.src = 'images/rd-0.png';break;
+			case 7: images1.src = 'images/ld-0.png';break;
+			case 8: images1.src = 'images/lu-0.png';break;
+		}
+		clearInterval(clc1);
+	}
+	//向上
+	oGoUp1.onclick = function(){
+		i1 = 0;
+		clearInterval(clc1);
+		clc1 = setInterval("goUp1(i1++);", 100);
+	}
+	function goUp1(){
+		if (parseInt(images1.style.top)<=0)
+		{
+			images1.style.top = parseInt(images1.style.top) + 5 + 'px';
+		}
+		else {
+			i1 = i1 % 4;
+			var name1 = "images/up-" + i1 + "." + "png";
+			images1.src = name1;
+			images1.style.top = parseInt(images1.style.top) - 10 + 'px';
+			flage1 = 1;
+			setTimeout("oStop1.onclick(flage1)", 1000);
+		}
+	}
+	//		向下
+	oGoDown1.onclick = function(){
+		i1 = 0;
+		clearInterval(clc1);
+		clc1 = setInterval("goDown1(i1++);", 100);
+	}
+	function goDown1(){
+
+		if (parseInt(images1.style.top)>=340)
+		{
+			images1.style.top = parseInt(images1.style.top) - 5 + 'px';
+		}
+		else {
+			i1 = i1 % 4;
+			var name1 = "images/down-" + i1 + "." + "png";
+			images1.src = name1;
+			images1.style.top = parseInt(images1.style.top) + 10 + 'px';
+			flage1 = 2;
+			setTimeout("oStop1.onclick(flage1)", 1000);
+		}
+	}
+	//向左
+	oGoLeft1.onclick = function(){
+		i1= 0;
+		clearInterval(clc1);
+		clc1 = setInterval("goLeft1(i1++);", 100);
+	}
+	function goLeft1(){
+		if (parseInt(images1.style.left)<=0)
+		{
+			images1.style.left = parseInt(images1.style.left) + 5 + 'px';
+		}
+		else {
+			i1 = i1 % 4;
+			var name1 = "images/left-" + i1 + "." + "png";
+			images1.src = name1;
+			images1.style.left = parseInt(images1.style.left) - 10 + 'px';
+			flage1 = 3;
+			setTimeout("oStop1.onclick(flage1)", 1000);
+		}
+	}
+	//向右
+	oGoRight1.onclick = function(){
+		i1 = 0;
+		clearInterval(clc1);
+		clc1 = setInterval("goRight1(i1++);", 100);
+	}
+	function goRight1(){
+		if (parseInt(images1.style.left)>=740)
+		{
+			images1.style.left = parseInt(images1.style.left) -5 + 'px';
+		}
+		else {
+			i1 = i1 % 4;
+			var name1 = "images/right-" + i1 + "." + "png";
+			images1.src = name1;
+			images1.style.left = parseInt(images1.style.left) + 10 + 'px';
+			flage1 = 4;
+			setTimeout("oStop1.onclick(flage1)", 1000);
+		}
+	}
+	//向右上
+	oRightUp1.onclick = function(){
+		i1 = 0;
+		clearInterval(clc1);
+		clc1 = setInterval("goRightUp1(i1++);", 100);
+	}
+	function goRightUp1(){
+		if (parseInt(images1.style.top)<=0&&parseInt(images1.style.left)>=740)
+		{
+			images1.style.left = parseInt(images1.style.left) - 5 + 'px';
+			images1.style.top = parseInt(images1.style.top) + 5 + 'px';
+		}
+		else {
+			i1 = i1 % 4;
+			var name = "images/rightUp-" + i1 + "." + "png";
+			images1.src = name;
+			images1.style.left = parseInt(images1.style.left) + 10 + 'px';
+			images1.style.top = parseInt(images1.style.top) - 10 + 'px';
+			flage1 = 5;
+			setTimeout("oStop1.onclick(flage1)", 1000);
+		}
+	}
+	//向右下
+	oRightDown1.onclick = function(){
+		i1 = 0;
+		clearInterval(clc1);
+		clc1 = setInterval("goRightDown1(i1++);", 100);
+	}
+	function goRightDown1(){
+		if (parseInt(images1.style.top)>=340||parseInt(images1.style.left)>=740)
+		{
+			images1.style.left = parseInt(images1.style.left) - 5 + 'px';
+			images1.style.top = parseInt(images1.style.top) - 5 + 'px';
+		}
+		else {
+			i1 = i1 % 4;
+			var name1 = "images/rd-" + i1 + "." + "png";
+			images1.src = name1;
+			images1.style.left = parseInt(images1.style.left) + 10 + 'px';
+			images1.style.top = parseInt(images1.style.top) + 10 + 'px';
+			flage1 = 6;
+			setTimeout("oStop1.onclick(flage1)", 1000);
+		}
+	}
+	//向左下
+	oLeftDown1.onclick = function(){
+		i1 = 0;
+		clearInterval(clc1);
+		clc1 = setInterval("goLeftDown1(i1++);", 100);
+	}
+	function goLeftDown1(){
+
+		if (parseInt(images1.style.top)>=340||parseInt(images1.style.left)<=0)
+		{
+			images1.style.left = parseInt(images1.style.left) + 5 + 'px';
+			images1.style.top = parseInt(images1.style.top) - 5 + 'px';
+		}
+		else {
+			i1 = i1% 4;
+			var name1 = "images/ld-" + i1 + "." + "png";
+			images1.src = name1;
+			images1.style.left = parseInt(images1.style.left) - 10 + 'px';
+			images1.style.top = parseInt(images1.style.top) + 10 + 'px';
+			flage1 = 7;
+			setTimeout("oStop1.onclick(flage1)", 1000);
+		}
+	}
+	//向左上
+	oLeftUp1.onclick =function(){
+		i1 = 0;
+		clearInterval(clc1);
+		clc1 = setInterval("goLeftUp1(i1++);", 100);
+
+
+	}
+	function goLeftUp1(){
+		if (parseInt(images1.style.top)<=0||parseInt(images1.style.left)<=0)
+		{images1.style.left = parseInt(images1.style.left) + 5 + 'px';
+			images1.style.top = parseInt(images1.style.top) + 5 + 'px';
+		}
+		else {
+			i1 = i1 % 4;
+			var name1 = "images/lu-" + i1 + "." + "png";
+			images1.src = name1;
+			images1.style.left = parseInt(images1.style.left) - 10 + 'px';
+			images1.style.top = parseInt(images1.style.top) - 10 + 'px';
+			flage1 = 8;
+			setTimeout("oStop1.onclick(flage1)", 400);
+		}
+	}
+
+
+	//	fenggexian
+
+
+	//	var Textareavalue=document.getElementById("test1").value;
+	function start(){
+//		alert(document.getElementById("test1").value);
+		if(document.getElementById("test1").value=="this.up()"){
+//			alert("ssssaaaa");
+			i = 0;
+			clearInterval(clc);
+			clc = setInterval("goUp(i++);", 100);
+		}
+		else if (document.getElementById("test1").value=="this.down()"){
+			i = 0;
+			clearInterval(clc);
+			clc = setInterval("goDown(i++);", 100);
+		}
+		else if (document.getElementById("test1").value=="this.right()"){
+			i = 0;
+			clearInterval(clc);
+			clc = setInterval("goRight(i++);", 100);
+		}
+		else if (document.getElementById("test1").value=="this.left()"){
+			i = 0;
+			clearInterval(clc);
+			clc = setInterval("goLeft(i++);", 100);
+		}
+		else if (document.getElementById("test1").value=="this.leftdown()"){
+			i = 0;
+			clearInterval(clc);
+			clc = setInterval("goLeftDown(i++);", 100);
+		}
+		else if (document.getElementById("test1").value=="this.rightdown()"){
+			i = 0;
+			clearInterval(clc);
+			clc = setInterval("goRightDown(i++);", 100);
+		}
+		else if (document.getElementById("test1").value=="this.leftup()"){
+			i = 0;
+			clearInterval(clc);
+			clc = setInterval("goLeftUp(i++);", 100);
+		}
+		else if (document.getElementById("test1").value=="this.rightup()"){
+			i = 0;
+			clearInterval(clc);
+			clc = setInterval("goRightUp(i++);", 100);
+		}
+		else if (document.getElementById("test1").value=="this.attack()") {
+			attack();
+
+		}
+
+		else {
+			alert("语法错误!");
+		}
+	}
+
+
+
+
+	//	fengexian
+	function start1(){
+//		alert(document.getElementById("test1").value);
+
+		if(document.getElementById("test2").value=="this.up()"){
+//			alert("ssssaaaa");
+			i1 = 0;
+			clearInterval(clc1);
+			clc1 = setInterval("goUp1(i1++);", 100);
+		}
+		else if (document.getElementById("test2").value=="this.down()"){
+			i1 = 0;
+			clearInterval(clc1);
+			clc1 = setInterval("goDown1(i1++);", 100);
+		}
+		else if (document.getElementById("test2").value=="this.right()"){
+			i1 = 0;
+			clearInterval(clc1);
+			clc1 = setInterval("goRight1(i1++);", 100);
+		}
+		else if (document.getElementById("test2").value=="this.left()"){
+			i1 = 0;
+			clearInterval(clc1);
+			clc1 = setInterval("goLeft1(i1++);", 100);
+		}
+		else if (document.getElementById("test2").value=="this.leftdown()"){
+			i1 = 0;
+			clearInterval(clc1);
+			clc1 = setInterval("goLeftDown1(i1++);", 100);
+		}
+		else if (document.getElementById("test2").value=="this.rightdown()"){
+			i1 = 0;
+			clearInterval(clc1);
+			clc1 = setInterval("goRightDown1(i1++);", 100);
+		}
+		else if (document.getElementById("test2").value=="this.leftup()"){
+			i1 = 0;
+			clearInterval(clc1);
+			clc1 = setInterval("goLeftUp1(i1++);", 100);
+		}
+		else if (document.getElementById("test2").value=="this.rightup()"){
+			i1 = 0;
+			clearInterval(clc1);
+			clc1 = setInterval("goRightUp1(i1++);", 100);
+		}
+		else if (document.getElementById("test2").value=="this.attack()"){
+			attack1();
+		}
+		else {
+			alert("语法错误!");
+		}
+
+
+	}
+
+
+	//	fenggexianva
+
+	//	function start1(){
+	//		var array=document.getElementById("test2").value.split(";");
+	//		var a=0;
+	//	for(var i=0;i<array.length;i++){
+	//
+	//		if(a==0) {
+	////		alert(array[i]);
+	//			if (array[i].trim() == "") {
+	//
+	//			}
+	//			else if (array[i].trim() == "this.up()") {
+	//				a = 1;
+	////			alert("ssssaaaa");
+	//				i1 = 0;
+	//				clearInterval(clc1);
+	//				clc1 = setInterval("goUp1(i1++);", 100);
+	//				a--;
+	//			}
+	//			else if (array[i].trim() == "this.down()") {
+	//				a = 1;
+	//				i1 = 0;
+	//				clearInterval(clc1);
+	//				clc1 = setInterval("goDown1(i1++);", 100);
+	//				a--;
+	//			}
+	//			else if (array[i].trim() == "this.right()") {
+	//				a=1;
+	//				i1 = 0;
+	//				clearInterval(clc1);
+	//				clc1 = setInterval("goRight1(i1++);", 100);
+	//				a--;
+	//			}
+	//			else if (array[i].trim() == "this.left()") {
+	//				i1 = 0;
+	//				clearInterval(clc1);
+	//				clc1 = setInterval("goLeft1(i1++);", 100);
+	//			}
+	//			else if (array[i].trim() == "this.leftdown()") {
+	//				i1 = 0;
+	//				clearInterval(clc1);
+	//				clc1 = setInterval("goLeftDown1(i1++);", 100);
+	//			}
+	//			else if (array[i].trim() == "this.rightdown()") {
+	//				i1 = 0;
+	//				clearInterval(clc1);
+	//				clc1 = setInterval("goRightDown1(i1++);", 100);
+	//			}
+	//			else if (array[i].trim() == "this.leftup()") {
+	//				i1 = 0;
+	//				clearInterval(clc1);
+	//				clc1 = setInterval("goLeftUp1(i1++);", 100);
+	//			}
+	//			else if (array[i].trim() == "this.rightup()") {
+	//				i1 = 0;
+	//				clearInterval(clc1);
+	//				clc1 = setInterval("goRightUp1(i1++);", 100);
+	//			}
+	//			else if (array[i].trim() == "this.attack()") {
+	//				attack1();
+	//			}
+	//			else {
+	//				alert("yufacuowu!");
+	//			}
+	//		}
+	//	}
+	//	}
+
+</script>
+<div style="text-align:center;clear:both">
+</div>
+<div style="width: 250px;height: 300px;" class="div1" ><textarea style="resize: none;height:200px;width:250px;background: none;border: 0;" id="test1"></textarea>
+	<input type="button" value="submit" onclick="start()" class="button1"></div>
+<div style="width: 250px;height: 300px;" class="div2"><textarea style="resize: none;height:200px;width:250px;background: none;border: 0;" id="test2"></textarea>
+	<input type="button" value="submit" onclick="start1()" class="button2"></div>
+</body>
+</html>

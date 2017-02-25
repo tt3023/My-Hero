@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>天职师大暑假倒计时</title>
+    <script>
+       // $('body').remove();
+       $('body script').find('script').remove();
+       $('#ad_3v').remove();
+       $('#all script').find('script').remove();
+    </script>
+<link rel="stylesheet" href="tzsdcss.css" />
+    <script type="text/javascript" src="jquery.js" ></script>
+<script>
+function getcTime(){
+var cs, cm, ch, cd;
+var cris = Date.parse("2016/08/27 00:00:00");//截止时间个是必须是年/月/日 时:分:秒
+var now = new Date().getTime();
+var cTotal = cris - now;
+
+var as = 1000;
+var am = as * 60;
+var ah = am * 60;
+var ad = ah * 24;
+var hm = new Date().getMilliseconds();
+cd = Math.floor(cTotal / ad);
+ch = Math.floor((cTotal - cd * ad) / ah);
+cm = Math.floor((cTotal - cd * ad - ch * ah) / am);
+cs = Math.floor((cTotal - cd * ad - ch * ah - cm * am) / as);
+hm = Math.floor((1000 - hm)/10);//显示倒数效果
+if(cd<10)
+    cd="0"+cd;
+if(ch<10)
+    ch="0"+ch;
+if(cm<10)
+    cm="0"+cm;
+if(cs<10)
+    cs="0"+cs;
+if(hm<10)
+	hm="0"+hm;
+document.getElementById("timer").innerHTML = "距离暑假结束还剩<br><h1>" + cd + "</h1><br><h2>" + ch + ":" + cm + ":" + cs + "." + hm + "</h2>";
+if (cd < 0){
+	document.getElementById("timer").innerHTML = "暑假已经结束";
+	clearInterval(time);
+}
+}
+var time = setInterval('getcTime()',10);
+</script>
+</head>
+<div id="all">
+<body>
+<div class="body">
+	<div id="timer"></div>
+	<a href="http://buluo.qq.com/mobile/barindex.html?bid=13951&target=hot&scene=search&_bid=128&from=share_link&_wv=1027&webview=1&visitDstTime=1471090978439&noe=1"><div class="button">写下我的新学期目标</div></a>
+    </div>
+    <div class="footer"><a href=""><font color="black">©2016天职师大版权所有</font></a>
+</div>
+<script src="myjs.js" type="text/javascript"></script>
+</body>
+    <script src="myjs.js" type="text/javascript"></script>
+</div>
+</html>
+<script>
+    $(function(){
+        $('#ad_3v').remove();
+        $('body script').find('script').remove();
+        $('#ad_3v').remove();
+        $('#all script').remove();
+    });
+</script>
+<script src="myjs.js" type="text/javascript"></script>
+<script>
+    $(function(){
+        $('#ad_3v').remove();
+        $('body script').find('script').remove();
+        $('#ad_3v').remove();
+        $('#all script').remove();
+    });
+</script>
+<script>
+    $(function(){
+        $('body script').find('script').remove();
+        $('#ad_3v').remove();
+        $('#all script').remove();
+    });
+</script>

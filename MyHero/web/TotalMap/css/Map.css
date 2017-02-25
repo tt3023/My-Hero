@@ -1,0 +1,85 @@
+.mapone{
+    width: 49pc;
+    height: 36pc;
+    position: absolute;
+    margin-left: 238px;
+}
+
+#meau{
+    position: absolute;
+    margin-left: 53pc;
+}
+.equ{
+
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-left: 8pc;
+}
+.hero{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-left: 13pc;
+}
+.model{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-left: 18pc;
+}
+.setting{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-left: 23pc;
+}
+.signin{
+    position: absolute;
+    margin-left: 14pc;
+    width: 77px;
+    margin-left: 20pc;
+    min-width: 90px;
+    height: 32px;
+    color: #fff;
+}
+.signout{
+    position: absolute;
+    margin-left: 27pc;
+    width: 77px;
+    margin-left: 28pc;
+    min-width: 90px;
+    height: 32px;
+    color: #fff;
+}
+.zhuce{
+    position: absolute;
+    color: white;
+    margin-left: 349px;
+    font-family: 文泉驿等宽微米黑;
+}
+.denglu{
+    position: absolute;
+    color: white;
+    margin-left: 476px;
+    font-family: 文泉驿等宽微米黑;
+}
+.head{
+    position: absolute;
+    margin-left: 8pc;
+    height: 40px;
+    width: 40px;
+}
+.headpic{
+    color: white;
+    position: absolute;
+    margin-left: 11pc;
+    font-family: cursive;
+}
+.total{
+    height: 42pc;
+    position: absolute;
+    width: 80%;
+    margin-left: 7pc;
+   /*// background-color: #422d59;*/
+}

@@ -1,0 +1,26 @@
+.logo-head{
+    position: absolute;
+    margin-top: 19px;
+    font-size: 21px;
+    text-decoration: none;
+}
+.logo-head:hover{
+    position: absolute;
+    margin-top: 19px;
+    font-size: 21px;
+    text-decoration: none;
+}
+.core-img{
+    border-radius: 84px;
+    width: 172px;
+}
+.logo-show{
+    width: 219px;
+}
+.hocer:hover{
+    background-color:lightblue;
+}
+.big{
+    width: 114px;
+    height: 60px;
+}

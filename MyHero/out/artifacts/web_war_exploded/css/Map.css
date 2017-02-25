@@ -1,0 +1,178 @@
+.mapone{
+    width: 49pc;
+    height: 36pc;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 238px;
+}
+body{
+    width: 80%;
+    height: 100%;
+    background-color:#3d304b;
+}
+#meau{
+    position: absolute;
+    margin-top: 36pc;
+    margin-left: 53pc;
+}
+.equ{
+
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-top: 0pc;
+    margin-left: -5pc;
+}
+.hero{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-top: 0pc;
+    margin-left: 0pc;
+}
+.model{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-top: 0pc;
+    margin-left: 5pc;
+}
+.setting{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-top: 0pc;
+    margin-left: 10pc;
+}
+.signin{
+    position: absolute;
+    margin-top: 38pc;
+    margin-left: 14pc;
+    width: 77px;
+    margin-left: 20pc;
+    min-width: 90px;
+    height: 32px;
+    color: #fff;
+}
+.signout{
+    position: absolute;
+    margin-top: 38pc;
+    margin-left: 27pc;
+    width: 77px;
+    margin-left: 28pc;
+    min-width: 90px;
+    height: 32px;
+    color: #fff;
+}
+.zhuce{
+    position: absolute;
+    color: white;
+    margin-top: 615px;
+    margin-left: 349px;
+    font-family: 文泉驿等宽微米黑;
+}
+.denglu{
+    position: absolute;
+    color: white;
+    margin-top: 615px;
+    margin-left: 476px;
+    font-family: 文泉驿等宽微米黑;
+}
+.head{
+    position: absolute;
+    margin-left: 8pc;
+    margin-top: 598px;
+    height: 40px;
+    width: 40px;
+}
+.headpic{
+    color: white;
+    position: absolute;
+    margin-top: 38pc;
+    margin-left: 11pc;
+    font-family: cursive;
+}
+.total{
+    height: 42pc;
+    position: absolute;
+    width: 80%;
+    margin-left: 7pc;
+    background-color: #422d59;
+}
+.btn-red{
+    border: none;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: #d578e0;
+    margin-top: 28pc;
+    margin-left: 28pc;
+}
+.btn-red:hover{
+    border: none;
+    border-radius: 10px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: red;
+    margin-top: 28pc;
+    margin-left: 28pc;
+}
+.spinner {
+    width: 74px;
+    height: 98px;
+    position: absolute;
+    margin-top: 19pc;
+    margin-left: 26pc;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /*// background-color: #67CF22;*/
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: bounce 2.0s infinite linear;
+    animation: bounce 2.0s infinite linear;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+    0%, 100% { -webkit-transform: translateY(0) }
+    50% { -webkit-transform: translateY(40px) }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0px);
+        -webkit-transform: translateY(40px);
+    } 50% {
+          transform: translateY(40px);
+          -webkit-transform: translateY(40px);
+      }
+}
+@-webkit-keyframes bounce {
+    0%, 100% { -webkit-transform: translateY(0) }
+    50% { -webkit-transform: translateY(40px) }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        -webkit-transform: translateY(0px);
+         /*transform: translateY(40px);*/
+         transform: translateY(0px);
+
+    } 50% {
+              -webkit-transform: translateY(40px);
+              transform: translateY(40px);
+      }
+}

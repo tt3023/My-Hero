@@ -1,0 +1,207 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>My Hero</title>
+    <link rel="stylesheet" type="text/css" href="./css/index-css.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/pcloud_feedpage_all.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/mycss.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/we.css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script Language="JavaScript" src="./js/index-js.js"></script>
+    <script src="./js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var url = window.document.location.href.toString();
+        var u = url.split("?");
+        var a=u[1].split("&");
+        var b=a[0].split("=");
+     $(function(){
+         if(b[1]!=null){
+             $("#sign-in").addClass("showwhat");
+             $("#sign-out").removeClass("showwhat");
+        $("#visiter").html(b[1].toString());
+         $("#circle").attr('src',"./img/1219e426.jpg");
+         }
+         else {
+             $("#sign-in").removeClass("showwhat");
+             $("#sign-out").addClass("showwhat");
+             $("#circle").attr('src',"./img/4ed9b640.jpg");
+         }
+    });
+        function showout(){
+
+            $("#sign-out").addClass("showwhat");
+            $("#sign-in").removeClass("showwhat");
+            $("#circle").attr('src',"./img/4ed9b640.jpg");
+            $("#visiter").html("游客");
+        }
+    </script>
+</head>
+<body >
+<div id="div1">
+<div id="div2" style="display:none;">
+    <table class="tab1" width="30%" border="0" cellpadding="3" cellspacing="1" style="background:rgb(6, 101, 197) none repeat scroll 0% 0%;; position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)" align="center">
+        <tr id="m_tr">
+            <td><font color="#FFFFFF">欢迎您的到来！</font></td>
+            <td align="right">
+                <input type="button" value="ｘ" onClick="closeme()" style="cursor: hand;">
+            </td>
+        </tr>
+        <tr>
+            <form name="myform"  method="post"  >
+                <td colspan="2" width="100%" bgcolor="#FFFFFF" height="150">
+                    <iframe src="login.html" width="600px" height="450px"></iframe>
+                </td>
+            </form>
+        </tr>
+    </table>
+</div>
+<div class="top">
+    <a class="logo" href="home.html">My Hero</a>
+    <a class="home">首页</a>
+    <a class="issue">话题</a>
+    <a class="found">发现</a>
+    <a class="message">消息</a>
+    <input type="button" value="退出" class="sign-out" id="sign-out" onclick="showout()"/>
+    <input type="button" value="登陆" class="sign-in" id="sign-in" onclick="openme()" />
+    <input type="button" value="关于我们" class="register" onclick="cc()">
+    <img src="./img/4ed9b640.jpg" id="circle" /><a class="a-user"><a id="visiter" class="visiter">游客</a></a>
+</div>
+    <section class="bd clearfix">
+        <aside style="height: 377px;" class="aside" id="aside">
+            <ul class="my-page-entry">
+                <li>
+                    <a class="entry select dynamic" data-navtype="dynamic" hidefocus="hideFocus">
+                        <em class="f-icon i-all-share"></em>
+                        分享动态
+                    </a>
+                </li>
+                <li>
+                    <a class="entry share" data-navtype="share" hidefocus="hideFocus">
+                        <em class="f-icon i-share"></em>
+                        我的分享
+                    </a>
+                </li>
+                <li>
+                    <a class="entry" hidefocus="hideFocus">
+                        <em class="f-icon i-notice"></em>
+                        通知
+                    </a>
+                </li>
+            </ul>
+            <div class="aside-separate">
+            </div>
+            <ul class="app-entry">
+                <li class="entry">
+                    <a class="app" hidefocus="hideFocus"  target="_self">
+                        <em class="app-icon i-disk"></em>
+                        网盘</a>
+                </li>
+                <li class="entry">
+                    <a class="app" hidefocus="hideFocus" target="_self">
+                        <em class="app-icon i-tongxunlu"></em>
+                        通讯录</a>
+                </li>
+                <li class="entry">
+                    <a class="app" hidefocus="hideFocus" target="_blank">
+                        <em class="app-icon i-tonghuajilu"></em>
+                        通话记录</a>
+                </li>
+                <li class="entry">
+                    <a class="app" hidefocus="hideFocus"  target="_self">
+                        <em class="app-icon i-duanxin"></em>
+                        短信</a>
+                </li>
+                <li class="entry">
+                    <a class="app" hidefocus="hideFocus"  target="_self">
+                        <em class="app-icon i-wenzhang"></em>
+                        文章</a>
+                </li>
+                <li class="entry">
+                    <a class="app" hidefocus="hideFocus" target="_self">
+                        <em class="app-icon i-note"></em>
+                        记事本</a>
+                </li>
+                <li class="entry">
+                    <a class="app" hidefocus="hideFocus" target="_self">
+                        <em class="app-icon i-zhaohui"></em>
+                        手机找回</a>
+                </li>
+                <li class="entry">
+                    <a class="app" hidefocus="hideFocus" target="_blank">
+                        <em class="app-icon i-xiaodu"></em>
+                        云直播</a>
+                </li>
+                <li class="entry">
+                    <a class="app eyun new-item" hidefocus="hideFocus"  target="_blank">
+                        <em class="app-icon i-eyun"></em>
+                        企业版</a>
+                </li>
+            </ul>
+        </aside>
+        <section style="height: 377px;" class="main clearfix" id="main-content">
+            <header class="hd-feed clear head-location" id="fdHeader">
+                <div class="feed-method" id="" xmlns="http://www.w3.org/1999/xhtml">
+                    <ul class="view-method-ct method-share">
+                        <li>
+                            <a class="view-method all on" data-category="0" data-filter="11000">全部</a>
+                        </li>
+                        <li>
+                            <a class="view-method album" data-category="0" data-filter="01000" >专辑</a>
+                        </li>
+                        <li>
+                            <a class="view-method pic" data-category="3" data-filter="10000" >图片</a>
+                        </li>
+                        <li>
+                            <a class="view-method video" data-category="1" data-filter="10000" >视频</a>
+                        </li>
+                        <li>
+                            <a class="view-method doc" data-category="4" data-filter="10000" >文档</a>
+                        </li>
+                        <li>
+                            <a class="view-method music" data-category="2" data-filter="10000">音乐</a>
+                        </li>
+                        <li>
+                            <a class="view-method other" data-category="6" data-filter="10000">其他</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section style="min-height:321px;_height:321px;" id="feed">
+                <div class="feed-panel"><div style="display: none;" id="feedLoad" class="feed-load">
+                </div><div style="width: 806px; display: block;" id="feedContent" class="feed-content clear">
+                    <div class="feed-top-link"></div><ul id="feedRecommend" class="feed-recommend ">
+                    <li class="feed-expert fl"><div class="feed-expert-header">
+                        <a class="expert fr" href="javascript:;">换一换</a><em></em>猜你喜欢</div>
+                        <ul class="feed-expert-content"><li class="feed-expert-item fl">
+                            <a class="face fl " href="/share/home?uk=809803785&amp;view=share" data-uk="809803785" target="_blank">
+                                <img class="img" src="./img/ee30d640.jpg">
+                            </a><div class="con fl cc-ct-s">
+                            <a class="name breviary" href="/share/home?uk=809803785&amp;view=share" target="_blank" data-uk="809803785" title="光与**乐部">光与**乐部</a>
+                            <a class="concern-btn unfollow" data="{&quot;uk&quot;:&quot;809803785&quot;,&quot;uname&quot;:&quot;光与**乐部&quot;,&quot;type&quot;:0,&quot;size&quot;:&quot;s&quot;,&quot;f&quot;:&quot;feed-expert-item&quot;}" href="javascript:;" hidefocus=""><em></em>
+                                <span class="follow">订阅</span><span class="defollow">取消</span></a></div><p class="txt" title="水彩素描交流群：278348331 ~资料来源网络，若有侵权，联系163邮箱vingdeer">水彩素描交流群：278348331 ~资料来源网络，若有...</p></li><li class="feed-expert-item fl">
+                            <a class="face fl " href="/share/home?uk=1112219283&amp;view=share" data-uk="1112219283" target="_blank"><img class="img" src="img/50424c4f.jpg"></a><div class="con fl cc-ct-s"><a class="name breviary" href="/share/home?uk=1112219283&amp;view=share" target="_blank" data-uk="1112219283" title="最终***4云盘">最终***4云盘</a><a class="concern-btn unfollow" data="{&quot;uk&quot;:&quot;1112219283&quot;,&quot;uname&quot;:&quot;最终***4云盘&quot;,&quot;type&quot;:0,&quot;size&quot;:&quot;s&quot;,&quot;f&quot;:&quot;feed-expert-item&quot;}" href="javascript:;" hidefocus=""><em></em><span class="follow">订阅</span><span class="defollow">取消</span></a></div><p class="txt" title="百度《最终幻想14》云平台。8月25日开放性测试开启，敬请期待。">百度《最终幻想14》云平台。8月25日开放性测试开...</p></li><li class="feed-expert-item fl"><a class="face fl " href="/share/home?uk=1447638178&amp;view=share" data-uk="1447638178" target="_blank"><img class="img" src="img/7a567d4d.jpg"></a><div class="con fl cc-ct-s"><a class="name breviary" href="/share/home?uk=1447638178&amp;view=share" target="_blank" data-uk="1447638178" title="艳*郭静">艳*郭静</a><a class="concern-btn unfollow" data="{&quot;uk&quot;:&quot;1447638178&quot;,&quot;uname&quot;:&quot;艳*郭静&quot;,&quot;type&quot;:0,&quot;size&quot;:&quot;s&quot;,&quot;f&quot;:&quot;feed-expert-item&quot;}" href="javascript:;" hidefocus=""><em></em><span class="follow">订阅</span><span class="defollow">取消</span></a></div><p class="txt" title="郭静与15个城市的艳遇">郭静与15个城市的艳遇</p></li><li class="feed-expert-item fl"><a class="face fl " href="/share/home?uk=2588464922&amp;view=share" data-uk="2588464922" target="_blank"><img class="img" src="img/999ac54c.jpg"></a><div class="con fl cc-ct-s"><a class="name breviary" href="/share/home?uk=2588464922&amp;view=share" target="_blank" data-uk="2588464922" title="后会**云盘">后会**云盘</a><a class="concern-btn unfollow" data="{&quot;uk&quot;:&quot;2588464922&quot;,&quot;uname&quot;:&quot;后会**云盘&quot;,&quot;type&quot;:0,&quot;size&quot;:&quot;s&quot;,&quot;f&quot;:&quot;feed-expert-item&quot;}" href="javascript:;" hidefocus=""><em></em><span class="follow">订阅</span><span class="defollow">取消</span></a></div><p class="txt" title="TA还木有个人说明呢">TA还木有个人说明呢</p></li></ul></li></ul><ul id="waterFallColumn_0" class="column" style="width: 403px; height: auto;"><li class="feed-dynamic-item" _index="0" _uk="440698068" _third="0" _shareid="880083982"><div class="feed-dynamic-header"><a class="title" href="/s/1nvrlM5b" target="_blank" title="16款炒鸡赞的梦幻原宿星空素材"><em class="s-f-d-def"></em>16款炒鸡赞的梦幻原宿星空素材</a></div><div class="feed-dynamic-body"><ul class="file-list clear"><li class="single-dir get-file" _cat="6" _isdir="1" _index="0" _path="%2F%E5%BE%AE%E5%8D%9A%E7%99%BE%E5%BA%A6%E4%BA%91%E5%88%86%E4%BA%AB%E6%96%87%E4%BB%B6%2F%E8%83%8C%E6%99%AF%E7%B4%A0%E6%9D%90%2F16%E6%AC%BE%E7%82%92%E9%B8%A1%E8%B5%9E%E7%9A%84%E6%A2%A6%E5%B9%BB%E5%8E%9F%E5%AE%BF%E6%98%9F%E7%A9%BA%E7%B4%A0%E6%9D%90" _random="sl7115661385"><div id="sl7115661385" class="son fl"><p class="single-son-title file-item dir" _cat="3" _index="0"><em class="son-icon s-f-s-3"></em><span class="son-name fl breviary" title="原宿星空 (9).png">原宿星空 (9).png</span></p><p class="single-son-title file-item dir" _cat="3" _index="1"><em class="son-icon s-f-s-3"></em><span class="son-name fl breviary" title="原宿星空 (8).png">原宿星空 (8).png</span></p><p class="single-son-title file-item dir" _cat="3" _index="2"><em class="son-icon s-f-s-3"></em><span class="son-name fl breviary" title="原宿星空 (7).png">原宿星空 (7).png</span></p><p class="single-son-title file-item dir" _cat="3" _index="3"><em class="son-icon s-f-s-3"></em><span class="son-name fl breviary" title="原宿星空 (6).png">原宿星空 (6).png</span></p><p><a class="more" href="/share/link?shareid=880083982&amp;uk=440698068&amp;third=" target="_blank"></a></p></div></li></ul></div><div class="feed-dynamic-cnt"></div><div class="feed-dynamic-footer"><div class="cont"><div class="one-line clear"><span class="time fr">18:31</span><a hidefocus="true" id="feedShareOwner" data-uk="440698068" href="/share/home?uk=440698068" target="_blank"><img class="face" src="img/ca1a0b40.jpg"><span class="name fl breviary" title="PS***享组">PS***享组</span></a></div><div class="two-line"><div class="fl fr"><a class="detail btn" href="/s/1nvrlM5b" target="_blank" _type="detail" title="详情">详情</a></div><div class="fl"><a class="tui btn" hidefocus="true" href="javascript:;" _type="tui" _state="0" _nu="3" title="赞"><em class="fl"></em>赞(3)<span class="tui-number"></span></a><a class="comment btn" hidefocus="true" href="javascript:;" _type="comment" "="" title="评论">评论<span class="comment-arrow hide"></span></a></div></div></div></div><div class="feed-dynamic-comment hide"><span class="comment-load"></span></div></li><li class="feed-dynamic-item" _index="1" _uk="440698068" _third="0" _shareid="917247981"><div class="feed-dynamic-header"><a class="title" href="/s/1bp0ZqIr" target="_blank" title="#原创首发#设计打造一辆豪华双层公交大巴 #右手左手 慢动作重播版#.mp4"><em class="noicon"></em>#原创首发#设计打造一辆豪华双层公交大巴 #右手左手 慢动作重播版#.mp4</a></div><div class="feed-dynamic-body"><ul class="file-list clear"><li class="single-video file-item bgset b-f-s-1" _cat="1" _index="0"><span class="img bgset bgCover"><span class="play"></span></span></li></ul></div><div class="feed-dynamic-cnt"></div><div class="feed-dynamic-footer"><div class="cont"><div class="one-line clear"><span class="time fr">07-18 17:08</span><a hidefocus="true" id="feedShareOwner1" data-uk="440698068" href="/share/home?uk=440698068" target="_blank"><img class="face" src="img/ca1a0b40.jpg"><span class="name fl breviary" title="PS***享组">PS***享组</span></a></div><div class="two-line"><div class="fl fr"><a class="save btn" hidefocus="true" href="javascript:;" _type="save" title="保存">保存</a><a class="dlink btn" hidefocus="true" href="javascript:;" _type="dlink" title="下载">下载</a><a class="detail btn" href="/s/1bp0ZqIr" target="_blank" _type="detail" title="详情">详情</a></div><div class="fl"><a class="tui btn" hidefocus="true" href="javascript:;" _type="tui" _state="0" _nu="11" title="赞"><em class="fl"></em>赞(11)<span class="tui-number"></span></a><a class="comment btn" hidefocus="true" href="javascript:;" _type="comment" "="" title="评论">评论<span class="comment-arrow hide"></span></a></div></div></div></div><div class="feed-dynamic-comment hide"><span class="comment-load"></span></div></li><li class="feed-dynamic-item" _index="4" _uk="3645112425" _third="0" _shareid="1432111046"><div class="feed-dynamic-header"><a class="title" href="/s/1hs145fu" target="_blank" title="《考研英语二2017年考研英语写作突破100题》配套录音-宫东风英语教学团队编著??高等教育出版社版权所有"><em class="s-f-d-def"></em>《考研英语二2017年考研英语写作突破100题》配套录音-宫东风英语教学团队编著??高等教育出...</a></div><div class="feed-dynamic-body"><ul class="file-list clear"><li class="single-dir get-file" _cat="6" _isdir="1" _index="0" _path="%2F%E3%80%8A%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%BA%8C2017%E5%B9%B4%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C%E7%AA%81%E7%A0%B4100%E9%A2%98%E3%80%8B%E9%85%8D%E5%A5%97%E5%BD%95%E9%9F%B3-%E5%AE%AB%E4%B8%9C%E9%A3%8E%E8%8B%B1%E8%AF%AD%E6%95%99%E5%AD%A6%E5%9B%A2%E9%98%9F%E7%BC%96%E8%91%97%E2%80%94%E2%80%94%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE%E7%89%88%E6%9D%83%E6%89%80%E6%9C%89" _random="sl3093638052"><div id="sl3093638052" class="son fl"><p class="single-son-title file-item dir" _cat="6" _index="0"><em class="son-icon s-f-d-def"></em><span class="son-name fl breviary" title="宫东风精讲??第三部分考研英语应用文写作备考习题50篇《考研英语二2017写作突破100题》高等教育出版社">宫东风精讲??第三部分考研英语应用文写作备考习题50篇《考研英语二2017写作突破100题》高等教育出版社</span></p><p class="single-son-title file-item dir" _cat="2" _index="1"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="考研英语二样文逐句精讲《2017年考研英语写作突破100题》高等教育出版社.MP3">考研英语二样文逐句精讲《2017年考研英语写作突破100题》高等教育出版社.MP3</span></p><p class="single-son-title file-item dir" _cat="2" _index="2"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="考研英语二样文词汇学习《2017年考研英语写作突破100题》高等教育出版社.MP3">考研英语二样文词汇学习《2017年考研英语写作突破100题》高等教育出版社.MP3</span></p><p class="single-son-title file-item dir" _cat="2" _index="3"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="考研英语二慢速朗读《2017年考研英语写作突破100题》高等教育出版社.MP3">考研英语二慢速朗读《2017年考研英语写作突破100题》高等教育出版社.MP3</span></p></div></li></ul></div><div class="feed-dynamic-cnt"></div><div class="feed-dynamic-footer"><div class="cont"><div class="one-line clear"><span class="time fr">07-08 21:36</span><a hidefocus="true" id="feedShareOwner" data-uk="3645112425" href="/share/home?uk=3645112425" target="_blank"><img class="face" src="img/4ed9b640.jpg"><span class="name fl breviary" title="宫东***英语">宫东***英语</span></a></div><div class="two-line"><div class="fl fr"><a class="detail btn" href="/s/1hs145fu" target="_blank" _type="detail" title="详情">详情</a></div><div class="fl"><a class="tui btn" hidefocus="true" href="javascript:;" _type="tui" _state="0" _nu="16" title="赞"><em class="fl"></em>赞(16)<span class="tui-number"></span></a><a class="comment btn" hidefocus="true" href="javascript:;" _type="comment" "="" title="评论">评论<span class="comment-arrow hide"></span></a></div></div></div></div><div class="feed-dynamic-comment hide"><span class="comment-load"></span></div></li><li class="feed-dynamic-item" _index="5" _uk="3645112425" _third="0" _shareid="2695374429"><div class="feed-dynamic-header"><a class="title" href="/s/1eRGR0wa" target="_blank" title="《考研英语二2017年考研英语写作突破100题》配套录音-宫东风英语教学团队编著??高等教育出版社版权所有"><em class="s-f-d-def"></em>《考研英语二2017年考研英语写作突破100题》配套录音-宫东风英语教学团队编著??高等教育出...</a></div><div class="feed-dynamic-body"><ul class="file-list clear"><li class="single-dir get-file" _cat="6" _isdir="1" _index="0" _path="%2F%E3%80%8A%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%BA%8C2017%E5%B9%B4%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C%E7%AA%81%E7%A0%B4100%E9%A2%98%E3%80%8B%E9%85%8D%E5%A5%97%E5%BD%95%E9%9F%B3-%E5%AE%AB%E4%B8%9C%E9%A3%8E%E8%8B%B1%E8%AF%AD%E6%95%99%E5%AD%A6%E5%9B%A2%E9%98%9F%E7%BC%96%E8%91%97%E2%80%94%E2%80%94%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE%E7%89%88%E6%9D%83%E6%89%80%E6%9C%89" _random="sl8526393873"><div id="sl8526393873" class="son fl"><p class="single-son-title file-item dir" _cat="6" _index="0"><em class="son-icon s-f-d-def"></em><span class="son-name fl breviary" title="宫东风精讲??第三部分考研英语应用文写作备考习题50篇《考研英语二2017写作突破100题》高等教育出版社">宫东风精讲??第三部分考研英语应用文写作备考习题50篇《考研英语二2017写作突破100题》高等教育出版社</span></p><p class="single-son-title file-item dir" _cat="2" _index="1"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="考研英语二样文逐句精讲《2017年考研英语写作突破100题》高等教育出版社.MP3">考研英语二样文逐句精讲《2017年考研英语写作突破100题》高等教育出版社.MP3</span></p><p class="single-son-title file-item dir" _cat="2" _index="2"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="考研英语二样文词汇学习《2017年考研英语写作突破100题》高等教育出版社.MP3">考研英语二样文词汇学习《2017年考研英语写作突破100题》高等教育出版社.MP3</span></p><p class="single-son-title file-item dir" _cat="2" _index="3"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="考研英语二慢速朗读《2017年考研英语写作突破100题》高等教育出版社.MP3">考研英语二慢速朗读《2017年考研英语写作突破100题》高等教育出版社.MP3</span></p></div></li></ul></div><div class="feed-dynamic-cnt"></div><div class="feed-dynamic-footer"><div class="cont"><div class="one-line clear"><span class="time fr">07-08 21:36</span><a hidefocus="true" id="feedShareOwner" data-uk="3645112425" href="/share/home?uk=3645112425" target="_blank"><img class="face" src="img/4ed9b640.jpg"><span class="name fl breviary" title="宫东***英语">宫东***英语</span></a></div><div class="two-line"><div class="fl fr"><a class="detail btn" href="/s/1eRGR0wa" target="_blank" _type="detail" title="详情">详情</a></div><div class="fl"><a class="tui btn" hidefocus="true" href="javascript:;" _type="tui" _state="0" _nu="4" title="赞"><em class="fl"></em>赞(4)<span class="tui-number"></span></a><a class="comment btn" hidefocus="true" href="javascript:;" _type="comment" "="" title="评论">评论<span class="comment-arrow hide"></span></a></div></div></div></div><div class="feed-dynamic-comment hide"><span class="comment-load"></span></div></li></ul><ul id="waterFallColumn_1" class="column" style="width: 403px; height: auto;"><li class="feed-dynamic-item" _index="2" _uk="3645112425" _third="0" _shareid="1654976701"><div class="feed-dynamic-header"><a class="title" href="/s/1dEGobOP" target="_blank" title="第13周2016.7.16?7.22宫东风考研英语课前课后学习计划"><em class="s-f-d-def"></em>第13周2016.7.16?7.22宫东风考研英语课前课后学习计划</a></div><div class="feed-dynamic-body"><ul class="file-list clear"><li class="single-dir get-file" _cat="6" _isdir="1" _index="0" _path="%2F%E5%AE%AB%E4%B8%9C%E9%A3%8E%E6%95%99%E6%8E%882017%E5%92%8C18%E5%B9%B4%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AF%BE%E5%89%8D%E5%92%8C%E8%AF%BE%E5%90%8E%E6%AF%8F%E5%91%A8%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92%2F%E7%AC%AC13%E5%91%A82016.7.16%E2%80%947.22%E5%AE%AB%E4%B8%9C%E9%A3%8E%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AF%BE%E5%89%8D%E8%AF%BE%E5%90%8E%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92" _random="sl1589718471"><div id="sl1589718471" class="son fl"><p class="single-son-title file-item dir" _cat="2" _index="0"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2007-3逐句精讲.wma">真题阅读2007-3逐句精讲.wma</span></p><p class="single-son-title file-item dir" _cat="2" _index="1"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2007-2逐句精讲.wma">真题阅读2007-2逐句精讲.wma</span></p><p class="single-son-title file-item dir" _cat="2" _index="2"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2007-1逐句精讲.wma">真题阅读2007-1逐句精讲.wma</span></p><p class="single-son-title file-item dir" _cat="1" _index="3"><em class="son-icon s-f-s-1"></em><span class="son-name fl breviary" title="写作第3篇Work hard, play hard.mp4">写作第3篇Work hard, play hard.mp4</span></p><p><a class="more" href="/share/link?shareid=1654976701&amp;uk=3645112425&amp;third=" target="_blank"></a></p></div></li></ul></div><div class="feed-dynamic-cnt"></div><div class="feed-dynamic-footer"><div class="cont"><div class="one-line clear"><span class="time fr">07-18 09:03</span><a hidefocus="true" id="feedShareOwner" data-uk="3645112425" href="/share/home?uk=3645112425" target="_blank"><img class="face" src="img/4ed9b640.jpg"><span class="name fl breviary" title="宫东***英语">宫东***英语</span></a></div><div class="two-line"><div class="fl fr"><a class="detail btn" href="/s/1dEGobOP" target="_blank" _type="detail" title="详情">详情</a></div><div class="fl"><a class="tui btn" hidefocus="true" href="javascript:;" _type="tui" _state="0" _nu="11" title="赞"><em class="fl"></em>赞(11)<span class="tui-number"></span></a><a class="comment btn" hidefocus="true" href="javascript:;" _type="comment" "="" title="评论">评论<span class="comment-arrow hide"></span></a></div></div></div></div><div class="feed-dynamic-comment hide"><span class="comment-load"></span></div></li><li class="feed-dynamic-item" _index="3" _uk="3645112425" _third="0" _shareid="2177703989"><div class="feed-dynamic-header"><a class="title" href="/s/1mhDrTtY" target="_blank" title="第13周2016.7.16?7.22宫东风考研英语课前课后学习计划"><em class="s-f-d-def"></em>第13周2016.7.16?7.22宫东风考研英语课前课后学习计划</a></div><div class="feed-dynamic-body"><ul class="file-list clear"><li class="single-dir get-file" _cat="6" _isdir="1" _index="0" _path="%2F%E5%AE%AB%E4%B8%9C%E9%A3%8E%E6%95%99%E6%8E%882017%E5%92%8C18%E5%B9%B4%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AF%BE%E5%89%8D%E5%92%8C%E8%AF%BE%E5%90%8E%E6%AF%8F%E5%91%A8%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92%2F%E7%AC%AC13%E5%91%A82016.7.16%E2%80%947.22%E5%AE%AB%E4%B8%9C%E9%A3%8E%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AF%BE%E5%89%8D%E8%AF%BE%E5%90%8E%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92" _random="sl89870190"><div id="sl89870190" class="son fl"><p class="single-son-title file-item dir" _cat="2" _index="0"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2007-3逐句精讲.wma">真题阅读2007-3逐句精讲.wma</span></p><p class="single-son-title file-item dir" _cat="2" _index="1"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2007-2逐句精讲.wma">真题阅读2007-2逐句精讲.wma</span></p><p class="single-son-title file-item dir" _cat="2" _index="2"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2007-1逐句精讲.wma">真题阅读2007-1逐句精讲.wma</span></p><p class="single-son-title file-item dir" _cat="1" _index="3"><em class="son-icon s-f-s-1"></em><span class="son-name fl breviary" title="写作第3篇Work hard, play hard.mp4">写作第3篇Work hard, play hard.mp4</span></p><p><a class="more" href="/share/link?shareid=2177703989&amp;uk=3645112425&amp;third=" target="_blank"></a></p></div></li></ul></div><div class="feed-dynamic-cnt"></div><div class="feed-dynamic-footer"><div class="cont"><div class="one-line clear"><span class="time fr">07-18 08:59</span><a hidefocus="true" id="feedShareOwner" data-uk="3645112425" href="/share/home?uk=3645112425" target="_blank"><img class="face" src="img/4ed9b640.jpg"><span class="name fl breviary" title="宫东***英语">宫东***英语</span></a></div><div class="two-line"><div class="fl fr"><a class="detail btn" href="/s/1mhDrTtY" target="_blank" _type="detail" title="详情">详情</a></div><div class="fl"><a class="tui btn" hidefocus="true" href="javascript:;" _type="tui" _state="0" _nu="8" title="赞"><em class="fl"></em>赞(8)<span class="tui-number"></span></a><a class="comment btn" hidefocus="true" href="javascript:;" _type="comment" "="" title="评论">评论<span class="comment-arrow hide"></span></a></div></div></div></div><div class="feed-dynamic-comment hide"><span class="comment-load"></span></div></li><li class="feed-dynamic-item" _index="6" _uk="3645112425" _third="0" _shareid="3648224869"><div class="feed-dynamic-header"><a class="title" href="/s/1jI6QfMu" target="_blank" title="第12周2016.7.9?7.15宫东风考研英语课前课后学习计划"><em class="s-f-d-def"></em>第12周2016.7.9?7.15宫东风考研英语课前课后学习计划</a></div><div class="feed-dynamic-body"><ul class="file-list clear"><li class="single-dir get-file" _cat="6" _isdir="1" _index="0" _path="%2F%E5%AE%AB%E4%B8%9C%E9%A3%8E%E6%95%99%E6%8E%882017%E5%92%8C18%E5%B9%B4%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AF%BE%E5%89%8D%E5%92%8C%E8%AF%BE%E5%90%8E%E6%AF%8F%E5%91%A8%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92%2F%E7%AC%AC12%E5%91%A82016.7.9%E2%80%947.15%E5%AE%AB%E4%B8%9C%E9%A3%8E%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AF%BE%E5%89%8D%E8%AF%BE%E5%90%8E%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92" _random="sl5928438144"><div id="sl5928438144" class="son fl"><p class="single-son-title file-item dir" _cat="2" _index="0"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2015-4第6段逐句精讲.MP3">真题阅读2015-4第6段逐句精讲.MP3</span></p><p class="single-son-title file-item dir" _cat="2" _index="1"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2015-4第5段逐句精讲.MP3">真题阅读2015-4第5段逐句精讲.MP3</span></p><p class="single-son-title file-item dir" _cat="2" _index="2"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2015-4第4段逐句精讲.MP3">真题阅读2015-4第4段逐句精讲.MP3</span></p><p class="single-son-title file-item dir" _cat="2" _index="3"><em class="son-icon s-f-s-2"></em><span class="son-name fl breviary" title="真题阅读2015-4第3段逐句精讲.MP3">真题阅读2015-4第3段逐句精讲.MP3</span></p><p><a class="more" href="/share/link?shareid=3648224869&amp;uk=3645112425&amp;third=" target="_blank"></a></p></div></li></ul></div><div class="feed-dynamic-cnt"></div><div class="feed-dynamic-footer"><div class="cont"><div class="one-line clear"><span class="time fr">07-08 21:11</span><a hidefocus="true" id="feedShareOwner" data-uk="3645112425" href="/share/home?uk=3645112425" target="_blank"><img class="face" src="img/4ed9b640.jpg"><span class="name fl breviary" title="宫东***英语">宫东***英语</span></a></div><div class="two-line"><div class="fl fr"><a class="detail btn" href="/s/1jI6QfMu" target="_blank" _type="detail" title="详情">详情</a></div><div class="fl"><a class="tui btn" hidefocus="true" href="javascript:;" _type="tui" _state="0" _nu="6" title="赞"><em class="fl"></em>赞(6)<span class="tui-number"></span></a><a class="comment btn" hidefocus="true" href="javascript:;" _type="comment" "="" title="评论">评论<span class="comment-arrow hide"></span></a></div></div></div></div><div class="feed-dynamic-comment hide"><span class="comment-load"></span></div></li></ul></div><div style="display: block;" id="feedPage" class="feed-page clear"><div class="paging">
+                <a href="javascript:void(0)" class="page-home mou-evt disabled">首页</a>
+                <a href="javascript:void(0)" class="page-prev disabled">上一页</a>
+                <span class="txt">第</span>
+                <span class="page-input-wrap"><input class="page-input" type="text"></span>
+                <span class="txt">/<b class="page-all">5</b>页</span>
+                <a href="javascript:void(0)" class="page-next mou-evt">下一页</a>
+                <a href="javascript:void(0)" class="page-end mou-evt">末页</a>
+            </div></div></div></section>
+            <footer>
+            </footer>
+        </section>
+    </section>
+    <div class="footer">@copyright My Hero</div>
+
+</div>
+<br>
+</body>
+</html>

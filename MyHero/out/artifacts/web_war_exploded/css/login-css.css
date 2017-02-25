@@ -1,0 +1,28 @@
+.header-top{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    margin-top: -226px;
+    margin-left: -29pc;
+    width: 87pc;
+    height: 47px;
+    background-color:#edecec;
+    position: absolute;
+}
+.header-block{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}
+.a-topc{
+    position: absolute;
+    font-size: 21px;
+    margin-top: 7px;
+    margin-left: -40pc;
+}
+.a-aboutus{
+    position: absolute;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 28pc;
+}
